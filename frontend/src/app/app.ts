@@ -1,22 +1,23 @@
 import { Component, signal, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ThemeService } from '../services/theme-service';
+import { ThemeSelectorComp } from '../components/theme-selector-comp/theme-selector-comp';
 
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ThemeSelectorComp],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  protected themeService = inject(ThemeService);
-  protected readonly title = signal('frontend');
+  private titleService = inject(Title);
 
-  protected themes: string[] = this.themeService.getAvailableThemes();
+  protected readonly title = signal('FleetSync | Login');
 
-
-  changeTheme(theme: string): void {
-    this.themeService.setTheme(theme);
+  constructor() {
+    this.titleService.setTitle(this.title());
   }
+
+
 }
