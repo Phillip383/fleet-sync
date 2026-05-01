@@ -4,52 +4,66 @@
 
 :root {
   --bg-color: #f0f0f0;
-  --accent-color: #1a1a1a;
-  --surface-color: #b1b2ff;
+  --accent-color: #7CF5FF;
+  --surface-color: #00CCDD;
+  --on-surface-color: #6439FF;
   --primary-text-color: #1a1a1a;
   --secondary-text-color: #4a4a4a;
+  --on-surface-text-color: #ffffff;
 }
 
 $themes: (
   light-blue: (
-    bg: #eef1ff,
-    accent: #aac4ff,
-    surface: #b1b2ff,
+    bg: #f0f0f0,
+    accent: #7CF5FF,
+    surface:  #00CCDD,
+    on-surface: #6439FF,
+    on-surface-text: #1a1a1a,
   ),
   light-orange: (
-    bg: #fcecdd,
-    accent: #fea82f,
-    surface: #ff6701,
+    bg: #f0f0f0,
+    accent: #ff6701,
+    surface: #fea82f,
+    on-surface: #fcecdd,
+    on-surface-text: #1a1a1a,
   ),
   light-red: (
-    bg: #fff7f1,
+    bg: #f0f0f0,
     accent: #e78895,
     surface: #bed1cf,
+    on-surface: #fff7f1,
+    on-surface-text: #1a1a1a,
   ),
   light-gray: (
-    bg: #f9f8f6,
+    bg: #f0f0f0,
     accent: #d9cfc7,
     surface: #c9b59c,
+    on-surface: #f9f8f6,
+    on-surface-text: #1a1a1a,
   ),
   dark-blue: (
     bg: #0a2647,
     accent: #2c74b3,
     surface: #144272,
+    on-surface-text: #f0f0f0,
   ),
   dark-orange: (
     bg: #4a3f35,
     accent: #fa7d09,
     surface: #ff4301,
+    on-surface-text: #1a1a1a,
   ),
   dark-red: (
     bg: #171717,
     accent: #da0037,
     surface: #444444,
+    on-surface-text: #f0f0f0,
   ),
   dark-gray: (
     bg: #151515,
     accent: #b4a5a5,
     surface: #301b3f,
+    on-surface-text: #f0f0f0,
   ),
 );
 
@@ -59,6 +73,9 @@ $themes: (
     --bg-color: #{$bg};
     --accent-color: #{map.get($colors, accent)};
     --surface-color: #{map.get($colors, surface)};
+    --on-surface-color: #{map.get($colors, on-surface)};
+    --on-surface-text-color: #{map.get($colors, on-surface-text)};
+
     @if string.index($name, 'dark') {
       --primary-text-color: #ffffff;
       --secondary-text-color: #{color.mix(#ffffff, $bg, 75%)};
