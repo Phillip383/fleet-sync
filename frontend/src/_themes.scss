@@ -1,5 +1,6 @@
 @use 'sass:string';
 @use 'sass:map';
+@use 'sass:color';
 
 :root {
   --bg-color: #f0f0f0;
@@ -60,10 +61,10 @@ $themes: (
     --surface-color: #{map.get($colors, surface)};
     @if string.index($name, 'dark') {
       --primary-text-color: #ffffff;
-      --secondary-text-color: #{mix(#ffffff, $bg, 75%)};
+      --secondary-text-color: #{color.mix(#ffffff, $bg, 75%)};
     } @else {
       --primary-text-color: #1a1a1a;
-      --secondary-text-color: #{mix(#1a1a1a, $bg, 80%)};
+      --secondary-text-color: #{color.mix(#1a1a1a, $bg, 80%)};
     }
   }
 }
