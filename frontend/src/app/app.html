@@ -1,2 +1,10 @@
-<main></main>
+<main>
+  <div class="picker-container">
+    @for(theme of themes; track theme) {
+    <button (click)="changeTheme(theme)">
+      {{ theme }}
+    </button>
+    }
+  </div>
+</main>
 <router-outlet />

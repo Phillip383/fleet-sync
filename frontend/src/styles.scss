@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'themes';
+
+body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--secondary-text-color);
+}
+
+p {
+  color: var(--primary-text-color);
+}
+
+.container {
+  background-color: var(--surface-color);
+}

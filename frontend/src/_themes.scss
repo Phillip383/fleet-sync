@@ -1,0 +1,73 @@
+@use 'sass:string';
+@use 'sass:map';
+
+:root {
+  --bg-color: #f0f0f0;
+  --accent-color: #1a1a1a;
+  --surface-color: #b1b2ff;
+  --primary-text-color: #1a1a1a;
+  --secondary-text-color: #4a4a4a;
+}
+
+$themes: (
+  light-blue: (
+    bg: #eef1ff,
+    accent: #aac4ff,
+    surface: #b1b2ff,
+  ),
+  light-orange: (
+    bg: #fcecdd,
+    accent: #fea82f,
+    surface: #ff6701,
+  ),
+  light-red: (
+    bg: #fff7f1,
+    accent: #e78895,
+    surface: #bed1cf,
+  ),
+  light-gray: (
+    bg: #f9f8f6,
+    accent: #d9cfc7,
+    surface: #c9b59c,
+  ),
+  dark-blue: (
+    bg: #0a2647,
+    accent: #2c74b3,
+    surface: #144272,
+  ),
+  dark-orange: (
+    bg: #4a3f35,
+    accent: #fa7d09,
+    surface: #ff4301,
+  ),
+  dark-red: (
+    bg: #171717,
+    accent: #da0037,
+    surface: #444444,
+  ),
+  dark-gray: (
+    bg: #151515,
+    accent: #b4a5a5,
+    surface: #301b3f,
+  ),
+);
+
+@mixin apply-theme($name, $colors) {
+  [data-theme='#{$name}'] {
+    $bg: map.get($colors, bg);
+    --bg-color: #{$bg};
+    --accent-color: #{map.get($colors, accent)};
+    --surface-color: #{map.get($colors, surface)};
+    @if string.index($name, 'dark') {
+      --primary-text-color: #ffffff;
+      --secondary-text-color: #{mix(#ffffff, $bg, 75%)};
+    } @else {
+      --primary-text-color: #1a1a1a;
+      --secondary-text-color: #{mix(#1a1a1a, $bg, 80%)};
+    }
+  }
+}
+
+@each $name, $colors in $themes {
+  @include apply-theme($name, $colors);
+}
