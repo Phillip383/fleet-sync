@@ -1,6 +1,6 @@
 import { Component, signal, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ThemeSelectorComp } from '../components/theme-selector-comp/theme-selector-comp';
+import { ThemeSelectorComp } from './features/themes/components/theme-selector-comp/theme-selector-comp';
 
 import { Title } from '@angular/platform-browser';
 
