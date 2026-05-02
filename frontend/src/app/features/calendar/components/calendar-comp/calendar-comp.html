@@ -1,0 +1,32 @@
+<div class="parent">
+<div class="calendar-container">
+  <div class="year-selection">
+    <svg>
+      <use xlink:href="../../../../../assets/images/chevron_backward_24dp.svg"></use>
+    </svg>
+    <h2 class="selected-year">{{selectedYear()}}</h2>
+    <svg>
+      <use (click)="shiftYear(1)" xlink:href="../../../../../assets/images/chevron_right_24dp.svg"></use>
+    </svg>
+    <p>|</p>
+    <svg>
+      <use xlink:href="../../../../../assets/images/chevron_backward_24dp.svg"></use>
+    </svg>
+    <h3 class="selected-month">{{months.get(selectedMonth())}}</h3>
+    <svg>
+      <use (click) = "shiftMonth(1)" use xlink:href="../../../../../assets/images/chevron_right_24dp.svg"></use>
+    </svg>
+  </div>
+  <div class="days-of-week">
+    <span>Sun</span>
+    <span>Mon</span>
+    <span>Tue</span>
+    <span>Wed</span>
+    <span>Thu</span>
+    <span>Fri</span>
+    <span>Sat</span>
+    </div>
+
+  <div class="days"><!--TODO: Use @for to add days to grid--></div>
+</div>
+</div>

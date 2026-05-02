@@ -5,10 +5,11 @@ import { ThemeSelectorComp } from './features/themes/components/theme-selector-c
 import { Title } from '@angular/platform-browser';
 import { Login } from "./features/login/login";
 import { NavBar } from "./features/nav-bar/nav-bar";
+import { CalendarComp } from "./features/calendar/components/calendar-comp/calendar-comp";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ThemeSelectorComp, Login, NavBar],
+  imports: [RouterOutlet, ThemeSelectorComp, Login, NavBar, CalendarComp],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
