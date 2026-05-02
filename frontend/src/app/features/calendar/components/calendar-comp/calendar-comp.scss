@@ -100,12 +100,22 @@ svg {
 }
 
 .days-of-week {
-  display: flex;
-  align-items:center;
-  justify-content: center;
-  gap: 1.4em;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1em;
+  max-width: 300px;
 }
 
-.days {
-  display: grid;
+.day {
+  text-align: center;
+  font-size: .8rem;
+  cursor: pointer;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  padding: .5em .5em;
+}
+
+.day:hover {
+  opacity: .8;
+  box-shadow: 5px 5px 3px var(--surface-color);
 }

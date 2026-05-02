@@ -17,8 +17,13 @@
         <span>Thu</span>
         <span>Fri</span>
         <span>Sat</span>
+        @for(emptyDays of [].constructor(getFirstDayOffset(selectedMonth(), selectedYear())); track $index) {
+          <div class="empty-day"></div>
+        }
+        @for(day of daysOfMonth; track day) {
+          <div class="day">{{day}}</div>
+        }
       </div>
-      <div class="days"><!--TODO: Use @for to add days to grid--></div>
 
       <div id="month-list-container">
         <ul class="month-list">
