@@ -25,17 +25,25 @@ export class CalendarComp {
     return new Date(year, month, 1).getDay();
   }
 
-  shiftYear(value: number) {
-    this.selectedYear.update(year => year + value);
+  toggleMonths() {
+    const div = document.getElementById('month-list-container');
+    if (div) {
+      div.style.display = div.style.display === 'block' ? 'none' : 'block';
+    }else {
+      console.log('div is null');
+    }
   }
 
-  shiftMonth(value: number) {
-    this.selectedMonth.update(month => {
-      if(month + value > 11) {
-        return 0;
-      }
-      return month + value }
-    );
+  toggleYears() {
+    document.getElementById('month-list-container ')?.setAttribute('display', 'block');
+  }
+
+  selectMonth(month: number) {
+    this.selectedMonth.set(month);
+  }
+
+  selectYear(year: number) {
+    this.selectedYear.set(year);
   }
 
 }
