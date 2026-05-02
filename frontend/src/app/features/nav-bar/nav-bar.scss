@@ -1,0 +1,44 @@
+@import '../../../styles';
+
+.nav-bar {
+  background-color: var(--on-surface-color);
+  border-bottom: 1px solid var(--accent-color);
+  color: var(--on-surface-text-color);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+h1 {
+  color: var(--on-surface-text-color);
+}
+
+img {
+  min-height: 32px;
+  width: 100%;
+  max-width: 64px;
+}
+
+.nav-bar:hover {
+  box-shadow: 10px 4px 30px var(--accent-color);
+}
+
+.nav-list {
+  display: inline-flex;
+  align-items:center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style:  none;
+}
+
+.nav-item {
+  text-decoration: none;
+  padding: 0em 2em;
+  cursor:pointer;
+}
+
+.nav-item:hover {
+  text-shadow: 1px 1px 20px var(--accent-color);
+}

@@ -1,0 +1,19 @@
+
+@import '../../../styles.scss';
+
+.form-group {
+  @include container;
+  gap: 10px;
+}
+
+input {
+  border-radius: 5px;
+  padding: .4em;
+}
+
+button {
+  border-radius: 5px;
+  padding: .5em;
+  border: none;
+  cursor: pointer;
+}

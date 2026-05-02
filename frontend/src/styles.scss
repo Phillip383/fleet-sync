@@ -1,11 +1,38 @@
 @use 'themes';
 
-body {
-  background-color: var(--bg-color);
-  min-height: 100vh;
+@mixin container(
+  $border-width: 1px,
+  $border-style: solid,
+  $border-radius: 10px,
+  $padding: 1em,
+  $margin: 0
+) {
+  border: $border-width $border-style var(--surface-color);
+  box-shadow: 10px 5px 20px var(--accent-color);
+  border-radius: $border-radius;
+  padding: $padding;
+  margin: $margin;
 }
 
-h1, h2, h3, h4, h5, h6 {
+@mixin flex($justification: center, $align: center, $direction: column) {
+  display: flex;
+  justify-content: $justification;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--secondary-text-color);
 }
 
@@ -13,6 +40,10 @@ p {
   color: var(--primary-text-color);
 }
 
-.container {
-  background-color: var(--surface-color);
+.center-flex-column {
+  @include flex();
+}
+
+.center-flex-row {
+  @include flex(center, center, row);
 }

@@ -1,10 +1,7 @@
-<main>
-  <p>theme-selector-comp works!</p>
-  <div class="picker-container">
-    @for(theme of themes; track theme) {
-    <button (click)="changeTheme(theme)">
-      {{ theme }}
-    </button>
-    }
-  </div>
-</main>
+ <div class="picker-container">
+  <select title="Theme" [ngModel]="selectedTheme" (ngModelChange)="selectedOption($event)">
+     @for (theme of themes; track theme) {
+     <option [value]="theme">{{ theme.replace('-', ' ') }}</option>
+   }
+   </select>
+</div>
