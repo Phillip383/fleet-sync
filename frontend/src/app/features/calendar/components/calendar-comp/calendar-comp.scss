@@ -31,6 +31,7 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
   gap: 1em;
   background-color: aliceblue;
   padding: 1em;
@@ -59,15 +60,19 @@ svg {
   opacity: .8;
 }
 
+#year-list-container,
 #month-list-container {
-  display: none;
-  position: relative;
+  visibility: hidden;
+  position: absolute;
+  z-index: 2;
   background-color: white;
   border: 1px solid var(--accent-color);
   border-radius: 5px;
   max-width: 350px;
+  min-height: 100px;
 }
 
+.year-list,
 .month-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -78,6 +83,7 @@ svg {
   max-width: 300px;
 }
 
+.year-item,
 .month-item {
   cursor: pointer;
   border: 1px solid var(--accent-color);

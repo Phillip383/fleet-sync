@@ -1,32 +1,40 @@
 <div class="parent">
-<div class="calendar-container">
-  <div class="year-selection">
-    <div id="select-year">
-      <h2 class="selected-year">{{selectedYear()}}</h2>
-    </div>
-    <p>|</p>
-      <div id="select-month" (click) = "toggleMonths()">
-        <h3 class="selected-month">{{months.get(selectedMonth())}}</h3>
+  <div class="calendar-container">
+    <div class="year-selection">
+      <div id="select-year" (click) ="toggleYears()">
+        <h2 class="selected-year">{{selectedYear()}}</h2>
       </div>
-    </div>
-    <div class="days-of-week">
-      <span>Sun</span>
-      <span>Mon</span>
-      <span>Tue</span>
-      <span>Wed</span>
-      <span>Thu</span>
-      <span>Fri</span>
-      <span>Sat</span>
-    </div>
+      <p>|</p>
+        <div id="select-month" (click) = "toggleMonths()">
+          <h3 class="selected-month">{{months.get(selectedMonth())}}</h3>
+        </div>
+      </div>
+      <div class="days-of-week">
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+      </div>
+      <div class="days"><!--TODO: Use @for to add days to grid--></div>
 
-    <div id="month-list-container">
-      <ul class="month-list">
-        @for(month of months; track month[0]) {
-          <li class="month-item" [value]=month[0] (click) ="selectMonth(month[0])">{{month[1]}}</li>
-        }
-      </ul>
-    </div>
+      <div id="month-list-container">
+        <ul class="month-list">
+          @for(month of months; track month[0]) {
+            <li class="month-item" [value]=month[0] (click) ="selectMonth(month[0])">{{month[1]}}</li>
+          }
+        </ul>
+      </div>
 
-  <div class="days"><!--TODO: Use @for to add days to grid--></div>
-</div>
+      <div id="year-list-container">
+        <ul class="year-list">
+          @for(year of years; track year) {
+            <li class="year-item" [value]=year (click) ="selectYear(year)">{{year}}</li>
+          }
+        </ul>
+      </div>
+
+  </div>
 </div>
