@@ -31,20 +31,23 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  gap: 1em;
   background-color: aliceblue;
+  gap: 1em;
   padding: 1em;
   width: 100%;
 }
 
+.month-year-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+}
 
 .year-selection,
 .month-selection {
-  display: flex;
-  align-items:center;
-  justify-content: center;
-  gap: 1em;
+  position: relative;
 }
 
 #select-month,
@@ -63,12 +66,13 @@ svg {
 #year-list-container,
 #month-list-container {
   visibility: hidden;
-  position: absolute;
+  position:absolute;
+  justify-self: center;
   z-index: 2;
   background-color: white;
   border: 1px solid var(--accent-color);
   border-radius: 5px;
-  max-width: 350px;
+  max-width: 365px;
   min-height: 100px;
 }
 
@@ -80,7 +84,7 @@ svg {
   list-style: none;
   padding: 1em;
   margin: 0;
-  max-width: 300px;
+  max-width: 100%;
 }
 
 .year-item,
@@ -90,7 +94,7 @@ svg {
   border-radius: 5px;
   padding: .5em .5em;
   font-size: .8rem;
-  max-width: 50px;
+  max-width: 65px;
   text-align: center;
 }
 
@@ -103,7 +107,7 @@ svg {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 1em;
-  max-width: 300px;
+  max-width: 325px;
 }
 
 .day {

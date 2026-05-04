@@ -1,0 +1,17 @@
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.operation {
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  width: 100%;
+  min-height: 60px;
+  padding: 1em;
+}
